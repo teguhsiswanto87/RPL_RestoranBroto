@@ -2,7 +2,7 @@
 if (!isset($_POST['btnLogin'])) {
     header("location: index.php?error=5");
 } else {
-    include "../config/functions.php";
+    include "functions.php";
     $conn = dbConnect();
 
     // fungsi untuk menghindari injeksi dari user yang jahil
