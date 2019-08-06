@@ -32,12 +32,6 @@ if (!isset($_POST['btnLogin'])) {
             $_SESSION['nama'] = $user_data['nama_pegawai'];
             $_SESSION['jabatan'] = $user_data['jabatan'];
 
-            // bikin id_session yang unik dan mengupdatenya agar saat login langsung berubah
-            // agar user biasa sulit untuk mengganti password Administrator
-            $sid_lama = session_id();
-            session_regenerate_id();
-            $sid_baru = session_id();
-            $conn->query("UPDATE pegawai SET id_session='$sid_baru' WHERE nip='$nip'");
 
             //langsung direct ke modul
 //            header("location:media.php?m=module");

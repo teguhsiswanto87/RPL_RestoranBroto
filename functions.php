@@ -2,7 +2,7 @@
 define("DEVELOPMENT", TRUE);
 function dbConnect()
 {
-    $db = new mysqli("localhost", "root", "", "db_restoran_tradisional_bubroto");
+    $db = new mysqli("localhost", "root", "siswanto123321", "db_restoran_tradisional_bubroto");
     return $db;
 }
 
@@ -223,7 +223,7 @@ function banner()
                 <li class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
                                                           data-toggle="dropdown" aria-expanded="false" href="#"><span
                                 class="mr-2 small"
-                                style="color: #fff;">Valerie Luna</span><img
+                                style="color: #fff;"><?php echo "$_SESSION[nama]"; ?></span><img
                                 class="border rounded-circle img-profile"
                                 src="assets/img/avatars/avatar1.jpeg"></a>
                     <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a
