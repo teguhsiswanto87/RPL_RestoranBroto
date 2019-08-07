@@ -79,11 +79,11 @@ class Meja
 
 
 // get jumlah total data Meja
-    function getTCounTotalData()
+    function getCountTotalData($condition = "")
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT count(no_meja) as jumlahMeja FROM meja ";
+            $sql = "SELECT count(no_meja) as jumlahMeja FROM meja $condition";
             $res = $conn->query($sql);
             $data = $res->fetch_assoc();
             return $data;
@@ -92,8 +92,8 @@ class Meja
         }
     }
 
-
-    function getTCounTotalKapasitas()
+// get total kapasitas yang ada
+    function getCountTotalKapasitas()
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
@@ -105,6 +105,24 @@ class Meja
             return false;
         }
     }
+
+// cek no_meja, apakah ada yang sama ?
+    function isNoMejaExist($no_meja)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "SELECT no_meja FROM meja WHERE no_meja='$no_meja'";
+            $res = $conn->query($sql);
+            $data = $res->fetch_assoc();
+            $row_cnt = $res->num_rows;
+            if ($row_cnt == 1) {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
 }
 
 ?>

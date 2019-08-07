@@ -82,26 +82,30 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             $dataMeja = $meja->getItemMeja($_GET['id']);
 
                                             ?>
-                                            <form method="POST" action="action/action_meja.php?act=update">
+                                            <form method="POST" action="action/action_meja.php?act=update"
+                                                  onsubmit="return mejaValidation()" name="formMeja">
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group disabled"><label for="username"><strong>No
+                                                        <div class="form-group disabled"><label for="no_meja"><strong>No
                                                                     Meja</strong></label><input
-                                                                    class="form-control disabled"
+                                                                    class="form-control"
                                                                     type="text"
+                                                                    maxlength="2"
                                                                     placeholder="<?php echo $dataMeja['no_meja']; ?>"
                                                                     value="<?php echo $dataMeja['no_meja']; ?>"
-                                                                    name="no_meja"
-                                                                    style="width: 219px;">
+                                                                    style="width: 219px;" disabled>
+                                                            <input type="hidden" name="no_meja"
+                                                                   value="<?php echo $dataMeja['no_meja']; ?>">
                                                         </div>
                                                     </div>
                                                     <div class="col" style="width: 322px;">
                                                         <div class="form-group" style="width: 263px;"><label
-                                                                    for="email"><strong>Kapasitas</strong><br></label><input
-                                                                    class="form-control" type="text"
+                                                                    for="kapasitas"><strong>Kapasitas</strong><br></label><input
+                                                                    class="form-control" type="number"
                                                                     value="<?php echo $dataMeja['kapasitas']; ?>"
-                                                                    placeholder="<?php echo $dataMeja['kapasitas']; ?>"
+                                                                    placeholder="<?php echo "Sebelumnya: $dataMeja[kapasitas]"; ?>"
                                                                     name="kapasitas"
+                                                                    min="0" maxlength="3"
                                                                     style="width: 273px;"></div>
                                                     </div>
                                                     <div class="col" style="width: 256px;">
@@ -134,6 +138,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validations.js"></script>
     </body>
 
     </html>

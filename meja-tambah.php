@@ -76,15 +76,17 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             <p class="text-primary m-0 font-weight-bold">Tambah Data Meja</p>
                                         </div>
                                         <div class="card-body">
-                                            <form method="POST" action="action/action_meja.php?act=tambah">
+                                            <form method="POST" action="action/action_meja.php?act=tambah"
+                                                  onsubmit="return mejaValidation()" name="formMeja">
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="no_meja"><strong>No
                                                                     Meja</strong></label><input class="form-control"
                                                                                                 type="text"
-                                                                                                placeholder="No Meja"
+                                                                                                placeholder="Nomor Meja"
                                                                                                 name="no_meja"
                                                                                                 style="width: 219px;"
+                                                                                                maxlength="2"
                                                                                                 autofocus></div>
                                                     </div>
                                                     <div class="col" style="width: 322px;">
@@ -92,6 +94,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                     for="kapasitas"><strong>Kapasitas</strong><br></label><input
                                                                     class="form-control" type="number"
                                                                     placeholder="Kapasitas meja" name="kapasitas"
+                                                                    min="0" maxlength="3"
                                                                     style="width: 273px;"></div>
                                                     </div>
                                                     <div class="col" style="width: 256px;">
@@ -124,6 +127,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validations.js"></script>
     </body>
 
     </html>

@@ -50,10 +50,10 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid"
                                  aria-describedby="dataTable_info">
-                                <table class="table dataTable my-0" id="dataTableMeja">
+                                <table class="table dataTable my-0 table-hover" id="dataTableMeja">
                                     <thead>
                                     <tr>
-                                        <th>No Meja</th>
+                                        <th>Nomor Meja</th>
                                         <th>Kapasitas</th>
                                         <th>Status Meja</th>
                                         <th style="width: 140px;">Pilihan</th>
@@ -70,19 +70,32 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             <td>$data[no_meja]</td>
                                             <td>$data[kapasitas] orang</td>
                                             <td>$data[status_meja]</td>
-                                            <td><a href='meja-edit.php?id=$data[no_meja]'>Edit</a></td>
+                                            <td><a href='meja-edit.php?id=$data[no_meja]'>Edit</a> | 
+                                                <a href='action/action_meja.php?act=hapus&id=$data[no_meja]' 
+                                                    onclick='return confirm(`Hapus data meja dengan nomor $data[no_meja] ?`)'>Hapus</a></td>
                                         </tr>";
                                     }
                                     ?>
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <td><strong><?php $totalData = $meja->getTCounTotalData();
-                                                echo $totalData['jumlahMeja']; ?><br></strong></td>
-                                        <td><strong><?php $totalKapasitas = $meja->getTCounTotalKapasitas();
-                                                echo "=" . $totalKapasitas['totalKapasitas']; ?><br></strong></td>
-                                        <td><strong>Status Meja<br></strong></td>
-                                        <td><strong>Pilihan<br></strong></td>
+                                        <td><strong>
+                                                <?php $totalData = $meja->getCountTotalData();
+                                                echo "Total:  $totalData[jumlahMeja]  meja"; ?><br>
+                                            </strong>
+                                        </td>
+                                        <td><strong><?php $totalKapasitas = $meja->getCountTotalKapasitas();
+                                                echo "= $totalKapasitas[totalKapasitas]"; ?><br>
+                                            </strong>
+                                        </td>
+                                        <td><strong>
+                                                <?php $jumlahMejaTerisi = $meja->getCountTotalData("where status_meja is not null");
+                                                $jumlahMejaKosong = $meja->getCountTotalData("where status_meja is null OR status_meja='kosong'");
+                                                echo "Meja Terisi: $jumlahMejaTerisi[jumlahMeja] <br>
+                                                      Meja Kosong: $jumlahMejaKosong[jumlahMeja]"; ?><br>
+                                            </strong>
+                                        </td>
+                                        <td><strong> - <br></strong></td>
                                     </tr>
                                     </tfoot>
                                 </table>
