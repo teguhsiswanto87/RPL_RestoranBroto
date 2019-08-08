@@ -20,7 +20,7 @@ include_once("functions.php");?>
         
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <?php banner();?>
+            <?php include "banner.php"; ?>
                 
             <div class="container-fluid">
                 <h3 class="text-dark mb-4">Pembayaran</h3>

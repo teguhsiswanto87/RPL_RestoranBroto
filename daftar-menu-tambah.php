@@ -24,7 +24,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
 
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                <?php banner(); ?>
+            <?php include "banner.php"; ?>
 
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">Dapur</h3>

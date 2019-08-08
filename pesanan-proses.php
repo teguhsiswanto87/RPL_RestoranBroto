@@ -1,4 +1,10 @@
-<?php include_once("functions.php");?>
+<?php
+session_start();
+if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
+    echo "Sementara : Anda harus login terlebih dahulu";
+} else {
+    include_once("functions.php");
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +24,7 @@
         
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <?php banner();?>
+            <?php include "banner.php"; ?>
             <div class="container-fluid">
                 <h3 class="text-dark mb-4">Profile</h3>
                 <div class="row mb-3">
@@ -132,4 +138,4 @@
     <script src="assets/js/theme.js"></script>
 </body>
 
-</html>
+</html><?php }?>

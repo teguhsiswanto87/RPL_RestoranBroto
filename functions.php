@@ -29,7 +29,7 @@ function getListMeja()
     $db = dbConnect();
     if ($db->connect_errno == 0) {
         $res = $db->query("SELECT * 
-						 FROM meja
+						 FROM meja WHERE status_meja = 'kosong'
 						 ORDER BY no_meja");
         if ($res) {
             $data = $res->fetch_all(MYSQLI_ASSOC);
@@ -41,128 +41,25 @@ function getListMeja()
         return FALSE;
 }
 
-// digunakan untuk mengambil data sebuah produk
-
+// digunakan untuk mengambil data sebuah menu
 ///---------------------------------------------------------------
-function getDataMenu($id_menu)
+function getListMenu()
 {
     $db = dbConnect();
     if ($db->connect_errno == 0) {
-        $res = $db->query("SELECT m.nama_menu, 
-								m.harga
-						 FROM menu m
-						 WHERE m.id_menu='$id_menu'");
+        $res = $db->query("SELECT * 
+						 FROM menu WHERE status = 'tersedia'
+						 ORDER BY kategori");
         if ($res) {
-            if ($res->num_rows > 0) {
-                $data = $res->fetch_assoc();
-                $res->free();
-                return $data;
-            } else
-                return FALSE;
+            $data = $res->fetch_all(MYSQLI_ASSOC);
+            $res->free();
+            return $data;
         } else
             return FALSE;
     } else
         return FALSE;
 }
 
-///---------------------------------------------------------------
-function getDataPelanggan($id_pelanggan)
-{
-    $db = dbConnect();
-    if ($db->connect_errno == 0) {
-        $res = $db->query("SELECT m.id_pelanggan, 
-								m.nama_pelanggan
-						 FROM pelanggan m
-						 WHERE m.id_pelanggan='$id_pelanggan'");
-        if ($res) {
-            if ($res->num_rows > 0) {
-                $data = $res->fetch_assoc();
-                $res->free();
-                return $data;
-            } else
-                return FALSE;
-        } else
-            return FALSE;
-    } else
-        return FALSE;
-}
-
-///---------------------------------------------------------------
-function getDataPegawai($nip)
-{
-    $db = dbConnect();
-    if ($db->connect_errno == 0) {
-        $res = $db->query("SELECT p.nip, 
-								p.password, 
-								p.nama_pegawai, 
-								p.jabatan, 
-								p.jenis_kelamin
-						 FROM pegawai p
-						 WHERE p.nip='$nip'");
-        if ($res) {
-            if ($res->num_rows > 0) {
-                $data = $res->fetch_assoc();
-                $res->free();
-                return $data;
-            } else
-                return FALSE;
-        } else
-            return FALSE;
-    } else
-        return FALSE;
-}
-
-///---------------------------------------------------------------
-function getDataPesanan()
-{
-    $db = dbConnect();
-    if ($db->connect_errno == 0) {
-        $res = $db->query("SELECT pl.nama_pelanggan, 
-								p.no_meja, 
-								m.nama_menu,
-								dt.jumlah
-   						FROM pelanggan pl, pesanan p, menu m, detail_pesanan dt 
-   						WHERE pl.id_pelanggan = p.id_pelanggan 
-						   	and p.no_pesanan = dt.no_pesanan 
-							and dt.id_menu = m.id_menu");
-        if ($res) {
-            if ($res->num_rows > 0) {
-                $data = $res->fetch_assoc();
-                $res->free();
-                return $data;
-            } else
-                return FALSE;
-        } else
-            return FALSE;
-    } else
-        return FALSE;
-}
-
-///---------------------------------------------------------------
-// function getDataPesanan($no_pesanan){
-// 	$db=dbConnect();
-// 	if($db->connect_errno==0){
-// 		$res=$db->query("SELECT p.no_pesanan,
-// 								p.no_meja,
-// 								p.status_pesanan,
-// 								m.nama_menu
-// 						 FROM pesanan p, detail_pesanan dp, menu m
-// 						 WHERE p.no_pesanan = dp.no_pesanan and dp.id_menu = m.id_menu");
-// 		if($res){
-// 			if($res->num_rows>0){
-// 				$data=$res->fetch_assoc();
-// 				$res->free();
-// 				return $data;
-// 			}
-// 			else
-// 				return FALSE;
-// 		}
-// 		else
-// 			return FALSE; 
-// 	}
-// 	else
-// 		return FALSE;
-// }
 ///---------------------------------------------------------------
 function banner()
 {
@@ -242,8 +139,132 @@ function banner()
 function navigator()
 {
     ?>
+    <?php 
+        $jb = $_SESSION["jabatan"];
+
+        if ($jb == "pelayan"){
+            pelayan();
+        } else if ($jb == "koki"){
+            koki();
+        } else if ($jb == "pemilik"){
+            pemilik();
+        } else if ($jb == "pantri"){
+            pantri();
+        }
+    ?>
+    <?php
+}
+///---------------------------------------------------------------
+function pelayan()
+{
+    ?>
     <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
          style="background: #2C3E50;">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="pesanan.php"><i
+                                class="material-icons">chrome_reader_mode</i><span>PESANAN</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="meja.php"><i
+                                class="fas fa-table"></i><span>MEJA</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="daftar-menu.php"><i
+                                class="material-icons">kitchen</i><span>DAPUR</span></a></li>
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <?php
+}
+///---------------------------------------------------------------
+function koki()
+{
+    ?>
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+         style="background: #2C3E50;">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="pesanan.php"><i
+                                class="material-icons">chrome_reader_mode</i><span>PESANAN</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="daftar-menu.php"><i
+                                class="material-icons">kitchen</i><span>DAPUR</span></a></li>
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <?php
+}
+///---------------------------------------------------------------
+function pantri()
+{
+    ?>
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+        style="background: #2C3E50;">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                
+                <li class="nav-item" role="presentation"><a class="nav-link" href="daftar-bahan-baku.php"><i
+                                class="material-icons">kitchen</i><span>DAPUR</span></a></li>
+                
+                <li class="nav-item" role="presentation"><a class="nav-link"><i class="material-icons">input</i><span>LAPORAN</span></a>
+                </li>
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <?php
+}
+///---------------------------------------------------------------
+function kasir()
+{
+    ?>
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+         style="background: #2C3E50;">
+        <div class="container-fluid d-flex flex-column p-0">
+            <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
+                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                
+                <li class="nav-item" role="presentation"><a class="nav-link" href="pembayaran.php"><i
+                                class="material-icons">account_balance_wallet</i><span>PEMBAYARAN</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link"><i 
+                                class="material-icons">input</i><span>LAPORAN</span></a></li>
+            </ul>
+            <div class="text-center d-none d-md-inline">
+                <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
+            </div>
+        </div>
+    </nav>
+    <?php
+}
+///---------------------------------------------------------------
+function pemilik()
+{
+    ?>
+    <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+        style="background: #2C3E50;">
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
@@ -269,10 +290,8 @@ function navigator()
             </div>
         </div>
     </nav>
-
     <?php
 }
-
 ///---------------------------------------------------------------
 function showError($message)
 {
