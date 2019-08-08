@@ -78,8 +78,8 @@ class Meja
     }
 
 
-// get jumlah total data Meja
-    function getCountTotalData($condition = "")
+// get jumlah total data Meja --------------------------------------
+    function getCountTotalData($condition = "")//beri value kosong jika function tidak menyertakan parameternya
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {

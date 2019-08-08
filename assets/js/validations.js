@@ -1,3 +1,4 @@
+//validasi kelola meja
 function mejaValidation() {
     var no_meja = document.formMeja.no_meja.value.trim();
     var kapasitas = document.formMeja.kapasitas.value.trim();
@@ -52,3 +53,5 @@ function mejaValidation() {
         return false;
     }
 }
+
+//bikin function lagi utuk validasi yang lainnya

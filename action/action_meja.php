@@ -13,7 +13,7 @@ if ($act == 'tambah') {
     //cek apakah nomer meja sudah ada
     if ($meja->isNoMejaExist($no_meja)) {
         echo "Nomor Meja sudah ada";
-    } else {
+    } else {//kalau nomor meja tidak ada yang sama
         $insert = $meja->insertMeja($no_meja, $kapasitas);
         if ($insert) {
             header("location: ../meja.php");
@@ -21,6 +21,7 @@ if ($act == 'tambah') {
             echo "Gagal Memasukkan data";
         }
     }
+
 } elseif ($act == 'update') {
     $no_meja = $conn->real_escape_string(my_inputformat(anti_injection($_POST['no_meja']), 0));
     $kapasitas = $conn->real_escape_string(my_inputformat(anti_injection($_POST['kapasitas']), 0));
@@ -31,6 +32,7 @@ if ($act == 'tambah') {
     } else {
         echo "Gagal memperbarui data";
     }
+    
 } elseif ($act == 'hapus') {
     $delete = $meja->deleteMeja($_GET['id']);
     if ($delete) {
