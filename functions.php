@@ -2,7 +2,7 @@
 define("DEVELOPMENT", TRUE);
 function dbConnect()
 {
-    $db = new mysqli("localhost", "root", "", "db_restoran_tradisional_bubroto");
+    $db = new mysqli("localhost", "root", "siswanto123321", "db_restoran_tradisional_bubroto");
     return $db;
 }
 
