@@ -66,9 +66,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                         <th style="width: 101px;">Id Menu</th>
                                         <th>Nama Menu</th>
                                         <th>Kategori</th>
-                                        <th>Harga (Rp)</th>
-                                        <th>Status</th>
-                                        <th>Pilihan</th>
+                                        <th class="text-center">Harga (Rp)</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Pilihan</th>
                                     </tr>
                                     </thead>
                                     <tbody>

@@ -1,5 +1,5 @@
 <?php
-$konek = mysqli_connect("localhost", "root", "siswanto123321", "db_restoran_tradisional_bubroto");
+$konek = mysqli_connect("localhost", "root", "", "db_restoran_tradisional_bubroto");
 include_once "../functions.php";
 include_once "../model/BahanBaku.php";
 $bahanBaku = new BahanBaku();
