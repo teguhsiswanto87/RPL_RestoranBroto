@@ -22,6 +22,18 @@ function my_inputformat($str, $space)
         return trim(preg_replace("/\s+/", "", $str));
 }
 
+//daftar kategori di restoran
+function getCategory()
+{
+    return array(1 => 'makanan berat', 2 => 'makanan ringan', 3 => 'minuman');
+}
+
+// format number for price
+function priceFormat($nominal)
+{
+    return number_format($nominal, 0, ",", ".");
+}
+
 // getListKategori digunakan untuk mengambil seluruh data dari tabel produk
 ///---------------------------------------------------------------
 function getListMeja()

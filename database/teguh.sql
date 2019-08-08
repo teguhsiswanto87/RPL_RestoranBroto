@@ -15,10 +15,14 @@ create table pegawai(
 -- 2
 create table menu(
     id_menu varchar(8) primary key,
+    nip varchar(8),
     kategori varchar(30) not null,
     nama_menu varchar(50) not null,
     harga int(10),
-    status varchar(15)
+    status varchar(15),
+
+    constraint fk_menu_nip foreign key(nip) references pegawai(nip)
+
 )Engine=InnoDB;
 
 -- 3
@@ -173,50 +177,50 @@ create table respon(
 
 -- insert data
 insert into pegawai(nip, nama_pegawai, jabatan, jenis_kelamin, password) values
-('pgw001', 'Yusrizal Falahan', 'pemilik', 'L',sha1('yusrizal')),
-('pgw002', 'Alif Hermawan', 'koki', 'L',sha1('alif')),
-('pgw003', 'Alwi Yahya Muljabar', 'pantry', 'L',sha1('alwi')),
-('pgw004', 'Teguh Siswanto', 'pelayan', 'L',sha1('teguh')),
-('pgw005', 'Paulo AL Kasir', 'kasir', 'L',sha1('kasir')),
-('pgw006', 'Kosumantri', 'cs', 'P',sha1('kosumantri'));
+('pgw0001', 'Yusrizal Falahan', 'pemilik', 'L',sha1('yusrizal')),
+('pgw0002', 'Alif Hermawan', 'koki', 'L',sha1('alif')),
+('pgw0003', 'Alwi Yahya Muljabar', 'pantry', 'L',sha1('alwi')),
+('pgw0004', 'Teguh Siswanto', 'pelayan', 'L',sha1('teguh')),
+('pgw0005', 'Paulo AL Kasir', 'kasir', 'L',sha1('kasir')),
+('pgw0006', 'Kosumantri', 'cs', 'P',sha1('kosumantri'));
 
 insert into menu(id_menu, kategori, nama_menu, harga, status) values
-('mnu001','makanan','Nasi Goreng',20000,''),
-('mnu002','minuman','Es Kelapa',7000,'');
+('mnu0001','makanan berat','Nasi Goreng',20000,''),
+('mnu0002','minuman','Es Kelapa',7000,'');
 
 insert into bahan_baku(id_bahan_baku, nama_bahan_baku, stok, satuan) values
-('bbk001','Beras',null,'kilogram'),
-('bbk002','Bawang Merah',null,'kilogram'),
-('bbk003','Bawang Putih',null,'kilogram'),
-('bbk004','Merica',null,'kilogram'),
-('bbk005','Cabai',null,'kilogram'),
-('bbk006','Kecap',null,'botol'),
-('bbk007','Kelapa',null,'buah'),
-('bbk008','Susu Kental',null,'kaleng');
+('bbk0001','Beras',null,'kilogram'),
+('bbk0002','Bawang Merah',null,'kilogram'),
+('bbk0003','Bawang Putih',null,'kilogram'),
+('bbk0004','Merica',null,'kilogram'),
+('bbk0005','Cabai',null,'kilogram'),
+('bbk0006','Kecap',null,'botol'),
+('bbk0007','Kelapa',null,'buah'),
+('bbk0008','Susu Kental',null,'kaleng');
 
 insert into resep(id_menu, id_bahan_baku, jumlah_bahan) values
-('mnu001','bbk001',1),
-('mnu001','bbk002',5),
-('mnu001','bbk003',3),
-('mnu001','bbk004',1),
-('mnu001','bbk005',2),
-('mnu001','bbk006',1),
-('mnu002','bbk007',1),
-('mnu002','bbk008',1);
+('mnu0001','bbk0001',1),
+('mnu0001','bbk0002',5),
+('mnu0001','bbk0003',3),
+('mnu0001','bbk0004',1),
+('mnu0001','bbk0005',2),
+('mnu0001','bbk0006',1),
+('mnu0002','bbk0007',1),
+('mnu0002','bbk0008',1);
 
 insert into belanja(id_belanja, nip, tgl_belanja, total_harga) values
-('blj001','pgw003','2018-09-10',345000),
-('blj002','pgw003','2018-09-11',100000);
+('blj0001','pgw0003','2018-09-10',345000),
+('blj0002','pgw0003','2018-09-11',100000);
 
 insert into detail_belanja(id_belanja, id_bahan_baku, harga, qty, satuan, tgl_kadaluarsa) values
-('blj001','bbk001',100000,20,'kilogram','2019-09-10'),
-('blj001','bbk002',50000,10,'kilogram','2018-12-10'),
-('blj001','bbk003',40000,10,'kilogram','2018-12-10'),
-('blj001','bbk004',20000,1,'kilogram','2019-10-10'),
-('blj001','bbk005',100000,5,'kilogram','2018-11-10'),
-('blj001','bbk006',35000,1,'botol','2020-09-10'),
-('blj002','bbk007',40000,10,'buah','2019-01-11'),
-('blj002','bbk008',60000,5,'kaleng','2020-09-11');
+('blj0001','bbk0001',100000,20,'kilogram','2019-09-10'),
+('blj0001','bbk0002',50000,10,'kilogram','2018-12-10'),
+('blj0001','bbk0003',40000,10,'kilogram','2018-12-10'),
+('blj0001','bbk0004',20000,1,'kilogram','2019-10-10'),
+('blj0001','bbk0005',100000,5,'kilogram','2018-11-10'),
+('blj0001','bbk0006',35000,1,'botol','2020-09-10'),
+('blj0002','bbk0007',40000,10,'buah','2019-01-11'),
+('blj0002','bbk0008',60000,5,'kaleng','2020-09-11');
 
 insert into meja(no_meja, kapasitas, status_meja) values
 ('A1','1',null),

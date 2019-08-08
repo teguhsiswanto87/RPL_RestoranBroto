@@ -10,7 +10,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Profile - Brand</title>
+        <title>Tambah Menu - RTB</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -27,7 +27,13 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                 <?php banner(); ?>
 
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Dapur</h3>
+                    <h3 class="text-dark mb-4">
+                        <a class="btn btn-secondary btn-sm" role="button"
+                           style="margin-right: 2rem;width: 100px; color: #fafafa; cursor: pointer;"
+                           onclick="self.history.back()">
+                            <i class="fas fa-chevron-left"></i> Kembali</a>
+                        Dapur</h3>
+
                     <div class="row mb-3">
                         <div class="col-lg-8">
                             <div class="row mb-3 d-none">
@@ -71,57 +77,79 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             <p class="text-primary m-0 font-weight-bold">Tambah Menu</p>
                                         </div>
                                         <div class="card-body">
-                                            <form>
+                                            <form method="POST" action="action/action_menu.php?act=tambah">
                                                 <div class="form-row">
-                                                    <div class="col" style="width: 174px;">
-                                                        <div class="form-group" style="width: 160px;"><label
-                                                                    for="username"><strong>Kode
-                                                                    Menu</strong></label><input class="form-control"
-                                                                                                type="text"
-                                                                                                placeholder="kode menu"
-                                                                                                name="username"
-                                                                                                style="width: 123px;">
+                                                    <!--                                                    <div class="col" style="width: 174px;">-->
+                                                    <!--                                                        <div class="form-group" style="width: 160px;"><label-->
+                                                    <!--                                                                    for="username"><strong>Kode-->
+                                                    <!--                                                                    Menu</strong></label>-->
+                                                    <!--                                                            <input class="form-control"-->
+                                                    <!--                                                                   type="text"-->
+                                                    <!--                                                                   placeholder="kode menu"-->
+                                                    <!--                                                                   name="username"-->
+                                                    <!--                                                                   style="width: 123px;">-->
+                                                    <!--                                                        </div>-->
+                                                    <!--                                                    </div>-->
+                                                    <div class="col">
+                                                        <div class="form-group" style="width: 353px;"><label
+                                                                    for="kategori"><strong>Kategori</strong></label>
+                                                            <select name="kategori" class="form-control">
+                                                                <?php
+                                                                $dataKategori = getCategory();
+                                                                foreach ($dataKategori as $dkategori) {
+                                                                    echo "<option value='$dkategori'>$dkategori</option>";
+                                                                }
+
+                                                                ?>
+                                                                <!--                                                                <option value="makanan berat">Makanan Berat</option>-->
+                                                                <!--                                                                <option value="makanan ringan">Makanan Ringan</option>-->
+                                                                <!--                                                                <option value="minuman">Minuman</option>-->
+                                                            </select>
+                                                            <!--                                                            <input class="form-control" type="text"-->
+                                                            <!--                                                                   placeholder="kategori"-->
+                                                            <!--                                                                   name="kategori" style="width: 271px;">-->
                                                         </div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group" style="width: 353px;"><label
-                                                                    for="first_name"><strong>Kategori</strong></label><input
-                                                                    class="form-control" type="text"
-                                                                    placeholder="kategori"
-                                                                    name="first_name" style="width: 271px;"></div>
-                                                    </div>
-                                                    <div class="col">
                                                         <div class="form-group"><label
-                                                                    for="first_name"><strong>Harga</strong></label><input
-                                                                    class="form-control" type="text" placeholder="harga"
-                                                                    name="first_name"></div>
+                                                                    for="harga"><strong>Harga</strong></label>
+                                                            <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                    <div class="input-group-text">Rp</div>
+                                                                </div>
+                                                                <input class="form-control" type="number"
+                                                                       placeholder="harga"
+                                                                       name="harga">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="first_name"><strong>Nama
+                                                        <div class="form-group"><label for="nama_menu"><strong>Nama
                                                                     Menu</strong></label><input class="form-control"
                                                                                                 type="text"
                                                                                                 placeholder="Nama Menu"
-                                                                                                name="first_name"></div>
+                                                                                                name="nama_menu"></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group"><label
-                                                                    for="last_name"><strong>Status</strong></label><select
-                                                                    class="form-control">
-                                                                <optgroup label="This is a group">
-                                                                    <option value="12" selected="">-- Pilih Status Menu
-                                                                        --
-                                                                    </option>
-                                                                    <option value="13">This is item 2</option>
-                                                                    <option value="14">This is item 3</option>
-                                                                </optgroup>
-                                                            </select></div>
+                                                        <!--                                                        <div class="form-group"><label-->
+                                                        <!--                                                                    for="last_name"><strong>Status</strong></label><select-->
+                                                        <!--                                                                    class="form-control">-->
+                                                        <!--                                                                <optgroup label="This is a group">-->
+                                                        <!--                                                                    <option value="12" selected="">-- Pilih Status Menu-->
+                                                        <!--                                                                        ---->
+                                                        <!--                                                                    </option>-->
+                                                        <!--                                                                    <option value="13">This is item 2</option>-->
+                                                        <!--                                                                    <option value="14">This is item 3</option>-->
+                                                        <!--                                                                </optgroup>-->
+                                                        <!--                                                            </select></div>-->
                                                     </div>
                                                 </div>
-                                                <div class="form-group"><a class="btn btn-primary btn-sm" role="button"
-                                                                           style="margin-left: 730px;width: 125px;"
-                                                                           href="daftar-menu-tambah-resep.php">Simpan</a>
+                                                <div class="form-group">
+                                                    <button class="btn btn-primary btn-sm" type="submit"
+                                                            style="margin-left: 730px;width: 125px;">Simpan
+                                                    </button>
                                                 </div>
                                             </form>
                                         </div>
