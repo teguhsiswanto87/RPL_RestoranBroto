@@ -6,7 +6,7 @@ $bahanBaku = new BahanBaku();
 
 if (isset($_POST["query"])) {
 
-    $output = '';
+    $output = ' ';
     $sql = "select * from bahan_baku where nama_bahan_baku like '%" . $_POST["query"] . "%' ";
     $result = mysqli_query($konek, $sql);
     $output = '<ul class="list-group">';
@@ -16,7 +16,7 @@ if (isset($_POST["query"])) {
             $output .= '<li class="list-group-item list-group-item-action" style="cursor: pointer;">' . $row["nama_bahan_baku"] . '</li>';
         }
     } else {
-        $output .= '<li class="list-group-item list-group-item-action" style="cursor: pointer;">Country Not Found</li>';
+        $output .= '<li class="list-group-item list-group-item-action disabled" style="cursor: pointer;">Bahan Baku Tidak Ditemukan</li>';
     }
     $output .= '</ul>';
     echo $output;

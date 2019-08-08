@@ -2,19 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb162e3e-a8c9-4219-b396-9b25800ba6ef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/action/action_menu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/action/action_resep.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/BahanBaku.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/Resep.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/nama_bahan_baku.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/pesanan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daftar-menu-resep.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu-resep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daftar-bahan-baku-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-bahan-baku-tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daftar-bahan-baku.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-bahan-baku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daftar-menu-tambah-resep.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu-tambah-resep.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daftar-menu-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu-tambah.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daftar-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/teguh.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/teguh.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kuisioner-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/kuisioner-tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kuisioner.php" beforeDir="false" afterPath="$PROJECT_DIR$/kuisioner.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meja-edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/meja-edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meja-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/meja-tambah.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/meja.php" beforeDir="false" afterPath="$PROJECT_DIR$/meja.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Meja.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Meja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pembayaran-proses.php" beforeDir="false" afterPath="$PROJECT_DIR$/pembayaran-proses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/pembayaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-proses.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-proses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-tambah-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-tambah-menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/nama_bahan_baku.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/nama_bahan_baku.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,11 +59,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+            <state relative-caret-position="310">
+              <caret line="137" column="70" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="70" />
+              <folding>
+                <element signature="e#2621#2649#0#HTML" expanded="true" />
+                <element signature="e#5772#5792#0#HTML" expanded="true" />
+                <element signature="e#6278#6284#0#HTML" expanded="true" />
+                <element signature="e#7039#7067#0#HTML" expanded="true" />
+                <element signature="e#8585#8613#0#HTML" expanded="true" />
+                <element signature="e#9952#9980#0#HTML" expanded="true" />
+                <element signature="e#11312#11340#0#HTML" expanded="true" />
+                <element signature="e#12685#12713#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,19 +82,16 @@
         <entry file="file://$PROJECT_DIR$/daftar-menu.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
-              <caret line="151" column="10" lean-forward="true" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+              <caret line="151" column="10" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="114" column="96" selection-start-line="114" selection-start-column="96" selection-end-line="114" selection-end-column="96" />
-              <folding>
-                <element signature="e#7065#7086#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="1415">
+              <caret line="233" selection-start-line="233" selection-end-line="233" />
             </state>
           </provider>
         </entry>
@@ -85,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/nama_bahan_baku.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+            <state relative-caret-position="58">
+              <caret line="9" column="94" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
               <folding>
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
@@ -117,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/model/Resep.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
-              <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+              <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -126,7 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tampilkan</find>
       <find>delete</find>
       <find>data</find>
       <find>btnLogin</find>
@@ -156,6 +169,7 @@
       <find>'</find>
       <find>bahanBakuAutocomplete</find>
       <find>yang</find>
+      <find>val</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -214,8 +228,8 @@
         <option value="$PROJECT_DIR$/model/Menu.php" />
         <option value="$PROJECT_DIR$/model/BahanBaku.php" />
         <option value="$PROJECT_DIR$/resources/ujicoba.json" />
-        <option value="$PROJECT_DIR$/resources/nama_bahan_baku.php" />
         <option value="$PROJECT_DIR$/daftar-menu-resep.php" />
+        <option value="$PROJECT_DIR$/resources/nama_bahan_baku.php" />
       </list>
     </option>
   </component>
@@ -322,18 +336,18 @@
       <workItem from="1565176526260" duration="2275000" />
       <workItem from="1565226454192" duration="1977000" />
       <workItem from="1565231875611" duration="2563000" />
-      <workItem from="1565237065510" duration="33288000" />
+      <workItem from="1565237065510" duration="35987000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96732000" />
+    <option name="totallyTimeSpent" value="99431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-8" width="1370" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22012103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -345,7 +359,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32924962" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32771823" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -552,7 +566,7 @@
     <entry file="file://$PROJECT_DIR$/model/Resep.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
-          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+          <caret line="69" column="13" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -560,13 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="34" column="57" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -584,10 +591,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="151" column="10" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1415">
+          <caret line="233" selection-start-line="233" selection-end-line="233" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/nama_bahan_baku.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
+        <state relative-caret-position="58">
+          <caret line="9" column="94" selection-start-line="9" selection-start-column="94" selection-end-line="9" selection-end-column="94" />
           <folding>
             <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
@@ -595,19 +616,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-menu.php">
+    <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="151" column="10" lean-forward="true" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="114" column="96" selection-start-line="114" selection-start-column="96" selection-end-line="114" selection-end-column="96" />
+        <state relative-caret-position="310">
+          <caret line="137" column="70" selection-start-line="137" selection-start-column="70" selection-end-line="137" selection-end-column="70" />
           <folding>
-            <element signature="e#7065#7086#0#HTML" expanded="true" />
+            <element signature="e#2621#2649#0#HTML" expanded="true" />
+            <element signature="e#5772#5792#0#HTML" expanded="true" />
+            <element signature="e#6278#6284#0#HTML" expanded="true" />
+            <element signature="e#7039#7067#0#HTML" expanded="true" />
+            <element signature="e#8585#8613#0#HTML" expanded="true" />
+            <element signature="e#9952#9980#0#HTML" expanded="true" />
+            <element signature="e#11312#11340#0#HTML" expanded="true" />
+            <element signature="e#12685#12713#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

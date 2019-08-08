@@ -1,4 +1,11 @@
-<?php include_once("functions.php");?>
+<?php
+session_start();
+if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
+    echo "Sementara : Anda harus login terlebih dahulu";
+} else {
+    include_once("functions.php");
+    ?>
+<?php $datamenu=getListMenu();?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +25,7 @@
         
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <?php banner();?>
+            <?php include "banner.php"; ?>
             <div class="container-fluid">
                 <h3 class="text-dark mb-4">Dapur</h3>
                 <div class="row mb-3">
@@ -66,7 +73,18 @@
                                                     <div class="form-group"><label for="username"><strong>No Pesanan</strong></label><input class="form-control" type="text" placeholder="No Pesanan" name="username"></div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="form-group" style="width: 333px;"><label for="email"><strong>Nama Menu</strong></label><select class="form-control" style="width: 334px;"><optgroup label="This is a group"><option value="12" selected="">-- Pilih Menu --</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                    <div class="form-group" style="width: 333px;"><label for="email"><strong>Nama Menu</strong></label><select class="form-control" style="width: 334px;">
+                                                        <optgroup>
+                                                        <option value="12" selected="">-- Pilih Menu --</option>
+                                                            <?php 
+                                                                foreach($datamenu as $data){
+                                                                    ?>
+                                                                        <option value="<?php echo $data['kode_menu'];?>"><?php echo $data['nama_menu'];?></option>
+                                                                    <?php
+                                                                }
+                                                            ?>
+                                                        </optgroup></select>
+                                                    </div>
                                                 </div>
                                                 <div class="col" style="width: 251px;">
                                                     <div class="form-group" style="width: 118px;"><label for="email"><strong>Jumlah</strong></label><input class="form-control" type="email" placeholder="jumlah pesan" name="email" style="width: 122px;"></div>
@@ -132,4 +150,4 @@
     <script src="assets/js/theme.js"></script>
 </body>
 
-</html>
+</html><?php }?>

@@ -1,6 +1,5 @@
 <?php
 
-
 class Meja
 {
     // get list of data from Meja
@@ -8,7 +7,7 @@ class Meja
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT * FROM meja";
+            $sql = "SELECT no_meja, kapasitas, status_meja FROM meja";
             $res = $conn->query($sql);
             if ($res) {
                 $data = $res->fetch_all(MYSQLI_ASSOC);
@@ -44,8 +43,8 @@ class Meja
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "INSERT INTO meja(no_meja,kapasitas)
-                    VALUES('$no_meja','$kapasitas') ";
+            $sql = "INSERT INTO meja(no_meja,kapasitas,status_meja)
+                    VALUES('$no_meja','$kapasitas','kosong') ";
             $res = $conn->query($sql);
             if ($res) return true; else return false;
         }

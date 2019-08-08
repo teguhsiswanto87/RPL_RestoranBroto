@@ -1,4 +1,11 @@
-<?php include_once("functions.php");?>
+<?php
+session_start();
+if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
+    echo "Sementara : Anda harus login terlebih dahulu";
+} else {
+    include_once("functions.php");
+    ?>
+<?php $datameja=getListMeja();?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +25,7 @@
         
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <?php banner();?>
+            <?php include "banner.php"; ?>
             <div class="container-fluid">
                 <h3 class="text-dark mb-4">Pesanan</h3>
                 <div class="row mb-3" style="width: 920px;">
@@ -66,8 +73,21 @@
                                                     <div class="form-group"><label for="username"><strong>Nama Pelanggan</strong></label><input class="form-control" type="text" placeholder="nama pelanggan" name="username"></div>
                                                 </div>
                                                 <div class="col">
-                                                    <div class="form-group"><label for="email" style="margin-bottom: 8px;height: 24px;"><strong>No Meja</strong><br></label><select class="form-control"><optgroup label="This is a group"><option value=" -- Pilih No Meja --" selected=""> -- Pilih No Meja --</option><option value="13">This is item 2</option><option value="14">This is item 3</option></optgroup></select></div>
+                                                    <div class="form-group"><label for="email" style="margin-bottom: 8px;height: 24px;"><strong>No Meja</strong><br></label>
+                                                        <select class="form-control">
+                                                        <optgroup>
+                                                        <option value=" -- Pilih No Meja --" selected=""> -- Pilih No Meja --</option>
+                                                            <?php 
+                                                                foreach($datameja as $data){
+                                                                    ?>
+                                                                        <option value="<?php echo $data['no_meja'];?>"><?php echo $data['no_meja'];?></option>
+                                                                    <?php
+                                                                }
+                                                            ?>
+                                                        </optgroup></select>
+                                                    </div>
                                                 </div>
+
                                                 <div class="col"><a class="btn btn-primary btn-block btn-sm" role="button" href="pesanan-tambah-menu.php" style="width: 102px;margin-top: 35px;margin-left: 90px;">Tambah</a></div>
                                             </div>
                                         </form>
@@ -90,5 +110,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
-
-</html>
+</html><?php } ?>

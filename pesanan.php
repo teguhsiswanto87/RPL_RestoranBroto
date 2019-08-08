@@ -7,7 +7,6 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     ?>
     <!DOCTYPE html>
     <html>
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -21,7 +20,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
 
     <body id="page-top">
     <div id="wrapper">
-        <?php include "navigator.php"; ?>
+        <?php navigator(); ?>
 
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
@@ -48,11 +47,21 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                         </button>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="text-md-right dataTables_filter" id="dataTable_filter"><a
-                                                class="btn btn-primary" role="button" style="width: 126px;"
-                                                href="pesanan-tambah.php">Tambah</a></div>
-                                </div>
+                                <?php 
+                                    $jb = $_SESSION["jabatan"];
+
+                                    if ($jb == "pelayan"){
+                                        ?>
+                                            <div class="col-md-6">
+                                                <div class="text-md-right dataTables_filter" id="dataTable_filter"><a
+                                                    class="btn btn-primary" role="button" style="width: 126px;"
+                                                    href="pesanan-tambah.php">Tambah</a>
+                                                </div>
+                                            </div>
+                                        <?php 
+                                    }
+                                ?>
+                                    
                             </div>
                             <div class="table-responsive table mt-2" id="dataTable" role="grid"
                                  aria-describedby="dataTable_info">

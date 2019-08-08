@@ -1,4 +1,10 @@
-<?php include_once("functions.php");?>
+<?php
+session_start();
+if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
+    echo "Sementara : Anda harus login terlebih dahulu";
+} else {
+    include_once("functions.php");
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -18,7 +24,7 @@
         
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-            <?php banner();?>
+            <?php include "banner.php"; ?>
                 
             <div class="container-fluid">
                 <h3 class="text-dark mb-4">Dapur</h3>
@@ -31,9 +37,17 @@
                             <div class="col-md-6 text-nowrap">
                                 <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label><button class="btn btn-primary" type="button" style="margin-left: 27px;width: 81px;">Cari</button></div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="text-md-right dataTables_filter" id="dataTable_filter"><a class="btn btn-primary" role="button" style="width: 149px;" href="daftar-bahan-baku-tambah.php">Tambah</a></div>
-                            </div>
+                            <?php 
+                                $jb = $_SESSION["jabatan"];
+
+                                if ($jb == "pantri"){
+                                    ?>
+                                    <div class="col-md-6">
+                                        <div class="text-md-right dataTables_filter" id="dataTable_filter"><a class="btn btn-primary" role="button" style="width: 149px;" href="daftar-bahan-baku-tambah.php">Tambah</a></div>
+                                    </div>
+                                    <?php 
+                                } 
+                            ?>
                         </div>
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
                             <table class="table dataTable my-0" id="dataTable">
@@ -50,7 +64,19 @@
                                         <td>Kecap</td>
                                         <td>2</td>
                                         <td>Buah</td>
-                                        <td>Hapus</td>
+                                        <?php 
+                                        $jb = $_SESSION["jabatan"];
+
+                                        if ($jb == "pantri"){
+                                            ?>
+                                                <td><a href="daftar-menu-resep.php">Hapus</a></td>
+                                            <?php 
+                                        } else {
+                                            ?>
+                                                <td><a href="#">Hapus</a></td>
+                                            <?php 
+                                        }
+                                        ?>
                                     </tr>
                                 </tbody>
                                 <tfoot>
@@ -95,4 +121,4 @@
     <script src="assets/js/theme.js"></script>
 </body>
 
-</html>
+</html><?php }?>
