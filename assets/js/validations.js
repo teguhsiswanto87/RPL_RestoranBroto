@@ -54,4 +54,55 @@ function mejaValidation() {
     }
 }
 
+//validasi kelola menu
+function menuValidation() {
+    var harga = document.formMenu.harga.value.trim();
+    var nama_menu = document.formMenu.nama_menu.value.trim();
+
+    //jika harga kosong
+    if (harga.length == 0) {
+        alert("Harga tidak boleh kosong");
+        document.formMenu.harga.focus();
+        return false;
+    }
+    //pastikan harga hanya mengandung huruf dan angka
+    var regexAngka = /^[0-9]+$/;
+    if (!regexAngka.test(harga)) {
+        alert("Harga harus berupa angka saja");
+        document.formMenu.harga.focus();
+        return false;
+    }
+
+    //jika harga lebih dari 2 digit
+    if (harga.length > 10) {
+        alert("Harga tidak boleh lebih dari 10 digit");
+        document.formMenu.harga.focus();
+        return false;
+    }
+
+    //jika nama_menu bernilai negatif
+    if (parseInt(harga) < 1) {
+        alert("Harga tidak valid");
+        document.formMenu.nama_menu.focus();
+        return false;
+    }
+
+    //jika nama_menu kosong
+    if (nama_menu.length == 0) {
+        alert("Nama menu tidak boleh kosong");
+        document.formMenu.nama_menu.focus();
+        return false;
+    }
+
+    //pastikan nama_menu berupa angka saja
+    var regexAngkaHuruf = /^[A-Za-z0-9\s]+$/;
+    var regexHuruf = /^[A-Za-z\s]+$/;
+    if (!regexAngkaHuruf.test(nama_menu) && !regexHuruf.test(nama_menu)) {
+        alert("Nama menu harus berupa huruf dan/atau angka saja");
+        document.formMenu.nama_menu.focus();
+        return false;
+    }
+
+}
+
 //bikin function lagi utuk validasi yang lainnya

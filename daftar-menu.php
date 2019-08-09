@@ -86,7 +86,8 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                         <td>$dmenu[kategori]</td>
                                         <td class='text-right'>$harga</td>
                                         <td>$dmenu[status]</td>
-                                        <td><a href='daftar-menu-resep.php?id=$dmenu[id_menu]'>Detail</a> | <a href='?id=$dmenu[id_menu]' title='Masuk ke halaman edit menu'>Edit</a> </td>
+                                        <td><a href='daftar-menu-resep.php?id=$dmenu[id_menu]'>Detail</a> | 
+                                            <a href='daftar-menu-edit.php?id=$dmenu[id_menu]' title='Masuk ke halaman edit menu'>Edit</a> </td>
                                     </tr>";
                                     }
                                     ?>

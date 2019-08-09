@@ -40,11 +40,13 @@ if ($act == 'tambah') {
 
 } elseif ($act == 'update') {
     $id_menu = $conn->real_escape_string(my_inputformat(anti_injection($_POST['id_menu']), 0));
-    $kategori = $conn->real_escape_string(my_inputformat(anti_injection($_POST['kategori']), 0));
+    $kategori = $conn->real_escape_string(my_inputformat(anti_injection($_POST['kategori']), 1));
+    $nama_menu = $conn->real_escape_string(my_inputformat(anti_injection($_POST['nama_menu']), 1));
+    $harga = $conn->real_escape_string(my_inputformat(anti_injection($_POST['harga']), 0));
 
-    $update = $menu->updateMenu($id_menu, $kategori);
+    $update = $menu->updateMenu($id_menu, $kategori, $nama_menu, $harga);
     if ($update) {
-        header("location: ../menu.php");
+        header("location: ../daftar-menu.php");
     } else {
         echo "Gagal memperbarui data";
     }
