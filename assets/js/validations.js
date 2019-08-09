@@ -1,4 +1,4 @@
-//validasi kelola meja
+//validasi kelola Meja
 function mejaValidation() {
     var no_meja = document.formMeja.no_meja.value.trim();
     var kapasitas = document.formMeja.kapasitas.value.trim();
@@ -54,7 +54,7 @@ function mejaValidation() {
     }
 }
 
-//validasi kelola menu
+//validasi kelola Menu
 function menuValidation() {
     var harga = document.formMenu.harga.value.trim();
     var nama_menu = document.formMenu.nama_menu.value.trim();
@@ -105,7 +105,7 @@ function menuValidation() {
 
 }
 
-//validasi kelola menu
+//validasi kelola Resep
 function resepValidation() {
     var jumlah_bahan = document.formResep.jumlah_bahan.value.trim();
 
@@ -139,7 +139,7 @@ function resepValidation() {
 
 }
 
-//validasi kelola menu
+//validasi kelola BahanBaku
 function bahanBakuValidation() {
     var nama_bahan_baku = document.formBahanBaku.nama_bahan_baku.value.trim();
 
@@ -162,6 +162,33 @@ function bahanBakuValidation() {
     if (nama_bahan_baku.length > 30) {
         alert("Nama bahan baku tidak boleh lebih dari 30 digit");
         document.formBahanBaku.nama_bahan_baku.focus();
+        return false;
+    }
+
+}
+
+//validasi kelola menu
+function detailPesananValidation() {
+    var qty = document.formDetailPesanan.qty.value.trim();
+
+    //jika qty kosong
+    if (qty.length == 0) {
+        alert("Jumlah Pesan tidak boleh kosong");
+        document.formDetailPesanan.qty.focus();
+        return false;
+    }
+    //pastikan qty hanya mengandung huruf dan/atau angka
+    var regexAngka = /^[0-9]+$/;
+    if (!regexAngka.test(qty)) {
+        alert("Jumlah Pesan hanya boleh mengandung angka");
+        document.formDetailPesanan.qty.focus();
+        return false;
+    }
+
+    //jika qty lebih dari 2 digit
+    if (qty.length > 3) {
+        alert("Jumlah Pesan tidak boleh lebih dari 3 digit");
+        document.formDetailPesanan.qty.focus();
         return false;
     }
 

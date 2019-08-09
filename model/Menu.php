@@ -3,11 +3,11 @@
 class Menu
 {
     // get list of data from Menu
-    function getListMenu()
+    function getListMenu($condition = "")
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT * FROM menu";
+            $sql = "SELECT * FROM menu $condition";
             $res = $conn->query($sql);
             if ($res) {
                 $data = $res->fetch_all(MYSQLI_ASSOC);

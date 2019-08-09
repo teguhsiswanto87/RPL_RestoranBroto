@@ -2,15 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cb162e3e-a8c9-4219-b396-9b25800ba6ef" name="Default Changelist" comment="Merge branch 'alwi' of https://github.com/teguhsiswanto87/RPL_RestoranBroto into dev&#10;&#10;# Conflicts:&#10;#&#9;daftar-menu-resep.php&#10;#&#9;daftar-menu.php">
-      <change afterPath="$PROJECT_DIR$/action/action_bahan_baku.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/action/action_detail_pesanan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/action/action_pesanan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laporan-pemasukan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laporan-pengeluaran.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/laporan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/DetailPesanan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Laporan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Pembayaran.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Pesanan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action/action_resep.php" beforeDir="false" afterPath="$PROJECT_DIR$/action/action_resep.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/validations.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/validations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/daftar-bahan-baku.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-bahan-baku.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daftar-bahan-baku-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-bahan-baku-tambah.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daftar-menu-resep.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu-resep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daftar-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/daftar-menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/teguh.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/teguh.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/BahanBaku.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/BahanBaku.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/Resep.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Resep.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kuisioner-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/kuisioner-tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meja-edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/meja-edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/meja.php" beforeDir="false" afterPath="$PROJECT_DIR$/meja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Meja.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Meja.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/pesanan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigator.php" beforeDir="false" afterPath="$PROJECT_DIR$/navigator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pembayaran-proses.php" beforeDir="false" afterPath="$PROJECT_DIR$/pembayaran-proses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pembayaran.php" beforeDir="false" afterPath="$PROJECT_DIR$/pembayaran.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-proses.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-proses.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-tambah-menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-tambah-menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan-tambah.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan-tambah.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pesanan.php" beforeDir="false" afterPath="$PROJECT_DIR$/pesanan.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/nama_bahan_baku.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/nama_bahan_baku.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,26 +69,91 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pesanan-tambah-menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="107" column="90" selection-start-line="107" selection-start-column="90" selection-end-line="107" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action/action_resep.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-137">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Pesanan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pesanan-tambah.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daftar-bahan-baku.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="39" column="71" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="39" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="218">
+              <caret line="188" column="87" selection-start-line="188" selection-start-column="87" selection-end-line="188" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Resep.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/action/action_bahan_baku.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>makanan</find>
-      <find>kategori</find>
-      <find>menu</find>
-      <find>jumlah</find>
-      <find>nama</find>
-      <find>kelapa</find>
-      <find>uah</find>
-      <find>tambah bahan baku menu</find>
-      <find>daftar bahan baku</find>
-      <find>yang dib</find>
-      <find>bahanbakuAuto</find>
-      <find>'</find>
-      <find>bahanBakuAutocomplete</find>
-      <find>yang</find>
-      <find>val</find>
-      <find>divider</find>
       <find>dapur</find>
       <find>form</find>
       <find>l</find>
@@ -76,12 +162,28 @@
       <find>dataTableBahanBaku_wrapper</find>
       <find>tambah bahan</find>
       <find>getLast</find>
-      <find>kembali</find>
-      <find>h3</find>
       <find>tambah bahan baku bar</find>
       <find>yang dibu</find>
       <find>jumlah baha</find>
       <find>onsub</find>
+      <find>6</find>
+      <find>no meja</find>
+      <find>getLas</find>
+      <find>pili</find>
+      <find>no pesanan</find>
+      <find>onsubmit</find>
+      <find>o</find>
+      <find>val</find>
+      <find>valida</find>
+      <find>ayam</find>
+      <find>tambah</find>
+      <find>meja teris</find>
+      <find>pilihan</find>
+      <find>yang terse</find>
+      <find>tambah bahan baku</find>
+      <find>buahdada</find>
+      <find>h3</find>
+      <find>kembali</find>
     </findStrings>
     <replaceStrings>
       <replace>'</replace>
@@ -100,8 +202,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/u/logout.php" />
         <option value="$PROJECT_DIR$/u/login_check.php" />
         <option value="$PROJECT_DIR$/module/mod_module/module.php" />
         <option value="$PROJECT_DIR$/u/footer.php" />
@@ -127,23 +227,31 @@
         <option value="$PROJECT_DIR$/meja-edit.php" />
         <option value="$PROJECT_DIR$/u/menu.php" />
         <option value="$PROJECT_DIR$/action/action_meja.php" />
-        <option value="$PROJECT_DIR$/model/Meja.php" />
-        <option value="$PROJECT_DIR$/meja.php" />
         <option value="$PROJECT_DIR$/database/teguh.sql" />
-        <option value="$PROJECT_DIR$/model/Menu.php" />
         <option value="$PROJECT_DIR$/resources/ujicoba.json" />
         <option value="$PROJECT_DIR$/resources/nama_bahan_baku.php" />
         <option value="$PROJECT_DIR$/daftar-menu-tambah.php" />
-        <option value="$PROJECT_DIR$/daftar-menu.php" />
         <option value="$PROJECT_DIR$/daftar-menu-edit.php" />
         <option value="$PROJECT_DIR$/action/action_menu.php" />
-        <option value="$PROJECT_DIR$/action/action_resep.php" />
         <option value="$PROJECT_DIR$/model/BahanBaku.php" />
         <option value="$PROJECT_DIR$/action/action_bahan_baku.php" />
         <option value="$PROJECT_DIR$/model/Resep.php" />
         <option value="$PROJECT_DIR$/daftar-bahan-baku.php" />
-        <option value="$PROJECT_DIR$/daftar-menu-resep.php" />
+        <option value="$PROJECT_DIR$/daftar-menu.php" />
+        <option value="$PROJECT_DIR$/model/Pesanan.php" />
+        <option value="$PROJECT_DIR$/action/action_pesanan.php" />
+        <option value="$PROJECT_DIR$/model/detail-pesanan.php" />
+        <option value="$PROJECT_DIR$/model/DetailPesanan.php" />
+        <option value="$PROJECT_DIR$/action/action_detail_pesanan.php" />
         <option value="$PROJECT_DIR$/assets/js/validations.js" />
+        <option value="$PROJECT_DIR$/pesanan-proses.php" />
+        <option value="$PROJECT_DIR$/model/Meja.php" />
+        <option value="$PROJECT_DIR$/meja.php" />
+        <option value="$PROJECT_DIR$/pesanan-tambah-menu.php" />
+        <option value="$PROJECT_DIR$/model/Menu.php" />
+        <option value="$PROJECT_DIR$/action/action_resep.php" />
+        <option value="$PROJECT_DIR$/daftar-menu-resep.php" />
+        <option value="$PROJECT_DIR$/pesanan-tambah.php" />
         <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
@@ -203,21 +311,22 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/database" />
-      <recent name="$PROJECT_DIR$/u" />
-      <recent name="$PROJECT_DIR$/assets/fonts" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/action" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/model" />
       <recent name="$PROJECT_DIR$/assets/css" />
       <recent name="$PROJECT_DIR$/module/mod_module" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database" />
+      <recent name="$PROJECT_DIR$/u" />
+      <recent name="$PROJECT_DIR$/assets/fonts" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -253,18 +362,19 @@
       <workItem from="1565231875611" duration="2563000" />
       <workItem from="1565237065510" duration="43546000" />
       <workItem from="1565321605414" duration="17131000" />
-      <workItem from="1565349647320" duration="1145000" />
+      <workItem from="1565349647320" duration="1361000" />
+      <workItem from="1565356510581" duration="13009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125266000" />
+    <option name="totallyTimeSpent" value="138491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-8" width="1370" height="778" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22617246" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22919819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -277,7 +387,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32924962" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32771823" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32618684" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -310,37 +420,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/JustUnikom/RekayasaPerangkatLunak/Tugas_BESAR/referensi/Login_v18/Login_v18/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-827">
-          <caret line="10" column="55" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="310" column="9" selection-start-line="310" selection-start-column="9" selection-end-line="310" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/Core/Core_d.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="297" column="9" selection-start-line="297" selection-start-column="9" selection-end-line="297" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/u/logout.php" />
-    <entry file="file://$PROJECT_DIR$/u/footer.php" />
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="75" column="17" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/u/login_check.php" />
     <entry file="file://$PROJECT_DIR$/u/module/testing/testing.php" />
     <entry file="file://$PROJECT_DIR$/u/index.php" />
     <entry file="file://$PROJECT_DIR$/assets/fonts/font-awesome.min.css">
@@ -382,7 +461,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigator.php" />
-    <entry file="file://$PROJECT_DIR$/login_check.php" />
     <entry file="file://$PROJECT_DIR$/u/media.php" />
     <entry file="file://$PROJECT_DIR$/model/Modul.php" />
     <entry file="file://$PROJECT_DIR$/config/functions.php" />
@@ -398,13 +476,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Meja.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="103" column="16" lean-forward="true" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -436,20 +507,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/pesanan.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/meja-tambah.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1935">
           <caret line="129" column="4" selection-start-line="129" selection-start-column="4" selection-end-line="129" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="73" selection-start-line="89" selection-start-column="73" selection-end-line="89" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -460,52 +521,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/meja.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="52" column="61" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-menu-tambah.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/action_bahan_baku.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="29" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/action_meja.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/action/action_menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="5" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/action/action_resep.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -516,31 +535,151 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Resep.php">
+    <entry file="file://$PROJECT_DIR$/daftar-bahan-baku-tambah.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="84" column="59" selection-start-line="84" selection-start-column="59" selection-end-line="84" selection-end-column="59" />
+        <state relative-caret-position="-1081" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login_check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-bahan-baku.php">
+    <entry file="file://$PROJECT_DIR$/action/action_meja.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="78" column="52" lean-forward="true" selection-start-line="78" selection-start-column="52" selection-end-line="78" selection-end-column="52" />
+        <state relative-caret-position="510">
+          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
+    <entry file="file://$PROJECT_DIR$/action/action_pesanan.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="233" column="72" lean-forward="true" selection-start-line="233" selection-start-column="72" selection-end-line="233" selection-end-column="85" />
+        <state relative-caret-position="120">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-menu-tambah.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="100" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/validations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="166" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="193">
+          <caret line="175" column="27" selection-start-line="175" selection-start-column="27" selection-end-line="175" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/action_detail_pesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pesanan-proses.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="143" column="145" lean-forward="true" selection-start-line="143" selection-start-column="145" selection-end-line="143" selection-end-column="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Meja.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/meja.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="83" column="133" selection-start-line="83" selection-start-column="133" selection-end-line="83" selection-end-column="133" />
+          <folding>
+            <element signature="e#2814#2835#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/DetailPesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Pesanan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pesanan-tambah-menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="107" column="90" selection-start-line="107" selection-start-column="90" selection-end-line="107" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/action_bahan_baku.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/action/action_resep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Resep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-menu-resep.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="188" column="87" selection-start-line="188" selection-start-column="87" selection-end-line="188" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/daftar-bahan-baku.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="39" column="71" lean-forward="true" selection-start-line="36" selection-start-column="20" selection-end-line="39" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pesanan-tambah.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="37" column="71" selection-start-line="37" selection-start-column="71" selection-end-line="37" selection-end-column="71" />
         </state>
       </provider>
     </entry>

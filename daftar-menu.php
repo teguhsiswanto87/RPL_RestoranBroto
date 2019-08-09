@@ -50,11 +50,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                 <div class="col-md-6">
                                     <div class="text-md-right dataTables_filter" id="dataTable_filter"><a
                                                 class="btn btn-primary" role="button" style="margin-right: 18px;"
-                                                href="daftar-bahan-baku.php">Daftar Bahan Baku</a><a
-                                                class="btn btn-primary"
-                                                role="button"
-                                                style="width: 149px;"
-                                                href="daftar-menu-tambah.php">Tambah</a>
+                                                href="daftar-bahan-baku.php">Daftar Bahan Baku</a>
+                                        <a class="btn btn-primary" role="button" style="width: 149px;"
+                                           href="daftar-menu-tambah.php">Tambah</a>
                                     </div>
                                 </div>
                             </div>
@@ -66,9 +64,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                         <th style="width: 101px;">Id Menu</th>
                                         <th>Nama Menu</th>
                                         <th>Kategori</th>
-                                        <th>Harga (Rp)</th>
-                                        <th>Status</th>
-                                        <th>Pilihan</th>
+                                        <th class="text-center">Harga (Rp)</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Pilihan</th>
                                     </tr>
                                     </thead>
                                     <tbody>

@@ -186,7 +186,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                     <tr>
                                                                         <td>$nama_bahan[nama_bahan_baku]</td>
                                                                         <td>$dresep[jumlah_bahan]</td>
-                                                                        <td>Buahdada</td>
+                                                                        <td>$nama_bahan[satuan]</td>
                                                                         <td>
                                                                             <a href=''>Edit</a> | 
                                                                             <a href='action/action_resep.php?act=hapus&id_menu=$dresep[id_menu]&id_bahan_baku=$dresep[id_bahan_baku]'
