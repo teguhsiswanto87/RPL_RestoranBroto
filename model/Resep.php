@@ -77,6 +77,25 @@ class Resep
         }
     }
 
+// get list of data from Resep dimana bahan baku yang tidak terdapat di resep tersebut
+    function getListBahanBakuForResep($id_menu)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "select distinct bb.id_bahan_baku as id_bahan_baku from bahan_baku as bb, resep as rs where bb.id_bahan_baku not in(select id_bahan_baku from resep where id_menu='$id_menu')";
+            $res = $conn->query($sql);
+            if ($res) {
+                $data = $res->fetch_all(MYSQLI_ASSOC);
+                $res->free();
+                return $data;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
 }
 
 ?>

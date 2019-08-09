@@ -9,11 +9,11 @@ $conn = dbConnect();
 if ($act == 'tambah') {
     $id_menu = $conn->real_escape_string(my_inputformat(anti_injection($_POST['id_menu']), 0));
     $id_bahan_baku = $conn->real_escape_string(my_inputformat(anti_injection($_POST['id_bahan_baku']), 0));
-    $jumlah = $conn->real_escape_string(my_inputformat(anti_injection($_POST['jumlah']), 0));
+    $jumlah_bahan = $conn->real_escape_string(my_inputformat(anti_injection($_POST['jumlah_bahan']), 0));
 
-    $insert = $resep->insertResep($id_menu, $id_bahan_baku, $jumlah);
+    $insert = $resep->insertResep($id_menu, $id_bahan_baku, $jumlah_bahan);
     if ($insert) {
-        header("location: ../daftar-resep.php");
+        header("location: ../daftar-menu-resep.php?id=$id_menu");
     } else {
         echo "Gagal Memasukkan data";
     }
@@ -30,9 +30,12 @@ if ($act == 'tambah') {
     }
 
 } elseif ($act == 'hapus') {
-    $delete = $resep->deleteResep($_GET['id']);
+    $id_menu = $_GET['id_menu'];
+    $id_bahan_baku = $_GET['id_bahan_baku'];
+
+    $delete = $resep->deleteResep($id_menu, $id_bahan_baku);
     if ($delete) {
-        header("location: ../daftar-resep.php?id=$_GET[id]");
+        header("location: ../daftar-menu-resep.php?id=$id_menu");
     } else {
         echo "Gagal menghapus data ID=$_GET[id]";
     }

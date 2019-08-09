@@ -105,4 +105,66 @@ function menuValidation() {
 
 }
 
+//validasi kelola menu
+function resepValidation() {
+    var jumlah_bahan = document.formResep.jumlah_bahan.value.trim();
+
+    //jika jumlah_bahan kosong
+    if (jumlah_bahan.length == 0) {
+        alert("Jumlah Bahan tidak boleh kosong");
+        document.formResep.jumlah_bahan.focus();
+        return false;
+    }
+    //pastikan jumlah_bahan hanya mengandung huruf dan angka
+    var regexAngka = /^[0-9]+$/;
+    if (!regexAngka.test(jumlah_bahan)) {
+        alert("Jumlah Bahan harus berupa angka saja");
+        document.formResep.jumlah_bahan.focus();
+        return false;
+    }
+
+    //jika jumlah_bahan lebih dari 2 digit
+    if (jumlah_bahan.length > 3) {
+        alert("Jumlah Bahan tidak boleh lebih dari 3 digit");
+        document.formResep.jumlah_bahan.focus();
+        return false;
+    }
+
+    //jika nama_menu bernilai negatif
+    if (parseInt(jumlah_bahan) < 1) {
+        alert("Jumlah Bahan tidak valid");
+        document.formResep.jumlah_bahan.focus();
+        return false;
+    }
+
+}
+
+//validasi kelola menu
+function bahanBakuValidation() {
+    var nama_bahan_baku = document.formBahanBaku.nama_bahan_baku.value.trim();
+
+    //jika nama_bahan_baku kosong
+    if (nama_bahan_baku.length == 0) {
+        alert("Nama bahan baku tidak boleh kosong");
+        document.formBahanBaku.nama_bahan_baku.focus();
+        return false;
+    }
+    //pastikan nama_bahan_baku hanya mengandung huruf dan/atau angka
+    var regexAngkaHuruf = /^[A-Za-z0-9\s]+$/;
+    var regexHuruf = /^[A-Za-z\s]+$/;
+    if (!regexAngkaHuruf.test(nama_bahan_baku) && !regexHuruf.test(nama_bahan_baku)) {
+        alert("Nama bahan baku tidak boleh mengandung simbol");
+        document.formBahanBaku.nama_bahan_baku.focus();
+        return false;
+    }
+
+    //jika nama_bahan_baku lebih dari 2 digit
+    if (nama_bahan_baku.length > 30) {
+        alert("Nama bahan baku tidak boleh lebih dari 30 digit");
+        document.formBahanBaku.nama_bahan_baku.focus();
+        return false;
+    }
+
+}
+
 //bikin function lagi utuk validasi yang lainnya

@@ -42,7 +42,12 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                            style="margin-right: 2rem;width: 100px; color: #fafafa; cursor: pointer;"
                            onclick="self.history.back()">
                             <i class="fas fa-chevron-left"></i> Kembali</a>
-                        Dapur</h3>
+                        Dapur
+                        <a class="btn btn-primary float-right btn-sm" type="button" data-toggle="modal"
+                           data-target="#tambahBahanBakuModal" data-whatever="@getbootstrap"
+                           style="margin-right: 12rem;width: 200px; color: #fafafa; cursor: pointer;">
+                            <i class="fas fa-plus"></i> Tambah Bahan Baku Baru</a>
+                    </h3>
                     <div class="row mb-3">
                         <div class="col-lg-8" style="width: 920px;">
                             <div class="row mb-3 d-none">
@@ -94,7 +99,8 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             $dmenu = $menu->getItemMenu($id_menu);
 
                                             ?>
-                                            <form method="POST" action="action/action_resep.php?act=tambah">
+                                            <form method="POST" action="action/action_resep.php?act=tambah"
+                                                  onsubmit="return resepValidation()" name="formResep">
                                                 <input type="hidden" value="<?php echo "$dmenu[id_menu]"; ?>"
                                                        name="id_menu">
                                                 <div class="form-row">
@@ -111,15 +117,27 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group" style="width: 280px;"><label
-                                                                    for="bahan_baku"><strong>Bahan
+                                                                    for="id_bahan_baku"><strong>Bahan
                                                                     Baku</strong> (yang tersedia)</label>
-                                                            <input class="form-control"
-                                                                   type="text"
-                                                                   placeholder="isi bahan baku ..."
-                                                                   name="bahan_baku"
-                                                                   id="bahanBakuAutocomplete"
-                                                                   style="width: 270px;">
-                                                            <div class="" id="bahanBakuList"></div>
+                                                            <select name="id_bahan_baku" class="form-control">
+                                                                <?php
+                                                                $dataResep = $resep->getListBahanBakuForResep($_GET['id']);
+
+                                                                foreach ($dataResep as $dResep) {
+                                                                    $nama_bahan = $bahanBaku->getItemBahanBaku($dResep['id_bahan_baku']);
+                                                                    echo "<option value='$nama_bahan[id_bahan_baku]'>$nama_bahan[nama_bahan_baku]</option>";
+//                                                                    echo "<option>$dResep[id_bahan_baku]</option>";
+                                                                }
+
+                                                                ?>
+                                                            </select>
+                                                            <!--                                                            <input class="form-control"-->
+                                                            <!--                                                                   type="text"-->
+                                                            <!--                                                                   placeholder="isi bahan baku ..."-->
+                                                            <!--                                                                   name="bahan_baku"-->
+                                                            <!--                                                                   id="bahanBakuAutocomplete"-->
+                                                            <!--                                                                   style="width: 270px;">-->
+                                                            <!--                                                            <div class="" id="bahanBakuList"></div>-->
                                                         </div>
                                                     </div>
                                                     <div class="col" style="width: 251px;">
@@ -127,7 +145,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                     for="jumlah_bahan"><strong>Jumlah
                                                                     <small> (yang dibutuhkan)</small>
                                                                 </strong></label>
-                                                            <input class="form-control" type="number"
+                                                            <input class="form-control" type="text"
                                                                    placeholder="jumlah" name="jumlah_bahan"
                                                                    style="width: 122px;"></div>
 
@@ -161,7 +179,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                             </thead>
                                                             <tbody>
                                                             <?php
-                                                            $dataResep = $resep->getListResep("where id_menu='$_GET[id]'");
+                                                            $dataResep = $resep->getListResep("where id_menu='$_GET[id]' ");
                                                             foreach ($dataResep as $dresep) {
                                                                 $nama_bahan = $bahanBaku->getItemBahanBakuBy("id_bahan_baku", "$dresep[id_bahan_baku]");
                                                                 echo "
@@ -171,7 +189,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                         <td>Buahdada</td>
                                                                         <td>
                                                                             <a href=''>Edit</a> | 
-                                                                            <a href='action/action_resep.php?act=hapus'>Hapus</a> 
+                                                                            <a href='action/action_resep.php?act=hapus&id_menu=$dresep[id_menu]&id_bahan_baku=$dresep[id_bahan_baku]'
+                                                                            onclick='return confirm(`Hapus bahan baku $nama_bahan[nama_bahan_baku] dari resep ini ?`);'
+                                                                            >Hapus</a> 
                                                                         </td>
                                                                     </tr>";
                                                             }
@@ -196,10 +216,47 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
             </footer>
         </div>
         <a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a></div>
+
+    <!--  COMPONENTS  -->
+    <!--  MODAL : tambah bahan baku  -->
+    <div class="modal fade" id="tambahBahanBakuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tambah Data Bahan Baku</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="action/action_bahan_baku.php?act=tambahDariResep"
+                          onsubmit="return bahanBakuValidation()" name="formBahanBaku">
+                        <input type="hidden" name="id_menu" value="<?php echo "$_GET[id]"; ?>">
+                        <div class="form-group">
+                            <label for="nama_bahan_baku" class="col-form-label">Nama Bahan Baku</label>
+                            <input type="text" class="form-control" name="nama_bahan_baku">
+                        </div>
+                        <div class="form-group">
+                            <label for="satuan" class="col-form-label">Satuan</label>
+                            <input type="text" class="form-control" name="satuan">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-primary">Tambah</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validations.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         // var arr = ["teguh", "siswanto", "universitas", "komputer", "indonesia", "teti", "tasya", "tamara", "emang"];

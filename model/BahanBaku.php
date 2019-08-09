@@ -39,12 +39,12 @@ class BahanBaku
     }
 
 // input data bahan_baku
-    function insertBahanBaku($id_bahan_baku, $nama_bahan_baku, $stok, $satuan)
+    function insertBahanBaku($id_bahan_baku, $nama_bahan_baku, $satuan)
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "INSERT INTO bahan_baku(id_bahan_baku, nama_bahan_baku, stok, satuan)
-                    VALUES('$id_bahan_baku','$nama_bahan_baku','$stok','$satuan')";
+            $sql = "INSERT INTO bahan_baku(id_bahan_baku, nama_bahan_baku, satuan)
+                    VALUES('$id_bahan_baku','$nama_bahan_baku','$satuan')";
             $res = $conn->query($sql);
             if ($res) return true; else return false;
         }
@@ -79,7 +79,7 @@ class BahanBaku
         }
     }
 
-// get 1 data based on specific columns
+// get 1 data berdasarkan column tertentu
     function getItemBahanBakuBy($column, $value)
     {
         $conn = dbConnect();
@@ -91,6 +91,25 @@ class BahanBaku
             if ($row_cnt == 1) {
                 return $data;
             }
+        } else {
+            return false;
+        }
+    }
+
+    // get data menu yang terakhir
+    function getLastItemBahanBaku()
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "SELECT * FROM bahan_baku ORDER BY id_bahan_baku DESC LIMIT 1";
+            $res = $conn->query($sql);
+            $data = $res->fetch_assoc();
+
+            $row_cnt = $res->num_rows;
+            if ($row_cnt == 1) {
+                return $data;
+            }
+
         } else {
             return false;
         }
