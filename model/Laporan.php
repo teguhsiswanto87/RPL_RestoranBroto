@@ -1,13 +1,32 @@
 <?php
 
-class Meja
+class Laporan
 {
     // get list of data from Meja
-    function getListMeja($condition = "")
+    function getListLaporan()
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT * FROM meja $condition";
+            $sql = "SELECT tgl_pembayaran, total FROM pembayaran";
+            $res = $conn->query($sql);
+            if ($res) {
+                $data = $res->fetch_all(MYSQLI_ASSOC);
+                $res->free();
+                return $data;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    // get list of data from Meja
+    function getListLaporanBelanja()
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "SELECT tgl_belanja, harga FROM belanja JOIN detail_belanja ON detail_belanja.id_belanja = belanja.id_belanja";
             $res = $conn->query($sql);
             if ($res) {
                 $data = $res->fetch_all(MYSQLI_ASSOC);
@@ -81,11 +100,11 @@ class Meja
 
 
     // get jumlah total data Meja --------------------------------------
-    function getCountTotalData($condition = "") //beri value kosong jika function tidak menyertakan parameternya
+    function getCountTotalData() //beri value kosong jika function tidak menyertakan parameternya
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT count(no_meja) as jumlahMeja FROM meja $condition";
+            $sql = "SELECT count(no_pembayaran) as jumlahPemasukan FROM pembayaran";
             $res = $conn->query($sql);
             $data = $res->fetch_assoc();
             return $data;

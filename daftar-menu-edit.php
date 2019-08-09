@@ -3,14 +3,17 @@ session_start();
 if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     echo "Sementara : Anda harus login terlebih dahulu";
 } else {
-    include_once("functions.php"); ?>
+    include_once("functions.php");
+    include_once "model/Menu.php";
+    ?>
+
     <!DOCTYPE html>
     <html>
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Tambah Menu - RTB</title>
+        <title>Edit Menu - RTB</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -77,8 +80,14 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                             <p class="text-primary m-0 font-weight-bold">Tambah Menu</p>
                                         </div>
                                         <div class="card-body">
-                                            <form method="POST" action="action/action_menu.php?act=tambah"
+                                            <?php
+                                            $menu = new Menu();
+                                            $dmenu = $menu->getItemMenu($_GET['id']);
+
+                                            ?>
+                                            <form method="POST" action="action/action_menu.php?act=update"
                                                   onsubmit="return menuValidation()" name="formMenu">
+                                                <input type="hidden" value="<?php echo "$_GET[id]"; ?>" name="id_menu">
                                                 <div class="form-row">
                                                     <!--                                                    <div class="col" style="width: 174px;">-->
                                                     <!--                                                        <div class="form-group" style="width: 160px;"><label-->
@@ -96,9 +105,16 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                     for="kategori"><strong>Kategori</strong></label>
                                                             <select name="kategori" class="form-control">
                                                                 <?php
-                                                                $dataKategori = getCategory();
+                                                                $dataKategori = getCategory(); // array di function
+                                                                $kategoriTerpilih = $menu->getItemMenuBy("id_menu", $_GET['id']);
                                                                 foreach ($dataKategori as $dkategori) {
-                                                                    echo "<option value='$dkategori'>$dkategori</option>";
+                                                                    if ($kategoriTerpilih['kategori'] == $dkategori) {
+                                                                        $selected = "selected";
+                                                                    } else {
+                                                                        $selected = "";
+                                                                    }
+
+                                                                    echo "<option value='$dkategori' $selected>$dkategori</option>";
                                                                 }
 
                                                                 ?>
@@ -120,6 +136,7 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                 </div>
                                                                 <input class="form-control" type="text"
                                                                        placeholder="harga"
+                                                                       value="<?php echo "$dmenu[harga]"; ?>"
                                                                        name="harga" tabindex="1">
                                                             </div>
                                                         </div>
@@ -133,7 +150,8 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                                                                                 placeholder="Nama Menu"
                                                                                                 name="nama_menu"
                                                                                                 tabindex="0"
-                                                                                                autofocus></div>
+                                                                                                value="<?php echo "$dmenu[nama_menu]"; ?>"
+                                                            ></div>
                                                     </div>
                                                     <div class="col">
                                                         <!--                                                        <div class="form-group"><label-->

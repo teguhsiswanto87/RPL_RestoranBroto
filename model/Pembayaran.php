@@ -1,13 +1,15 @@
 <?php
 
-class Meja
+class Pembayaran
 {
     // get list of data from Meja
-    function getListMeja($condition = "")
+    function getListPembayaran()
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "SELECT * FROM meja $condition";
+            $sql = "SELECT pesanan.no_pesanan, pesanan.no_meja, pesanan.nama_pelanggan, pembayaran.nip, pembayaran.status_pembayaran 
+                    FROM pembayaran JOIN pesanan ON pesanan.no_pesanan = pembayaran.no_pesanan 
+                                    JOIN pegawai ON pembayaran.nip = pegawai.nip";
             $res = $conn->query($sql);
             if ($res) {
                 $data = $res->fetch_all(MYSQLI_ASSOC);
