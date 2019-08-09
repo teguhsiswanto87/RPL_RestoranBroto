@@ -21,7 +21,7 @@ class Meja
         }
     }
 
-// get 1 data (ambil 1 record aja berdasarkan No.meja)
+    // get 1 data (ambil 1 record aja berdasarkan No.meja)
     function getItemMeja($no_meja)
     {
         $conn = dbConnect();
@@ -38,7 +38,7 @@ class Meja
         }
     }
 
-// input data meja
+    // input data meja
     function insertMeja($no_meja, $kapasitas)
     {
         $conn = dbConnect();
@@ -46,39 +46,42 @@ class Meja
             $sql = "INSERT INTO meja(no_meja,kapasitas,status_meja)
                     VALUES('$no_meja','$kapasitas','kosong') ";
             $res = $conn->query($sql);
-            if ($res) return true; else return false;
+            if ($res) return true;
+            else return false;
         }
     }
 
-// update data meja
+    // update data meja
     function updateMeja($no_meja, $kapasitas)
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
             $sql = "UPDATE meja SET kapasitas='$kapasitas' WHERE no_meja='$no_meja'";
             $res = $conn->query($sql);
-            if ($res) return true; else return false;
+            if ($res) return true;
+            else return false;
         } else {
             return false;
         }
     }
 
-//delete 1 data meja
+    //delete 1 data meja
     function deleteMeja($no_meja)
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
             $sql = "DELETE FROM meja WHERE no_meja='$no_meja'";
             $res = $conn->query($sql);
-            if ($res) return true; else return false;
+            if ($res) return true;
+            else return false;
         } else {
             return false;
         }
     }
 
 
-// get jumlah total data Meja --------------------------------------
-    function getCountTotalData($condition = "")//beri value kosong jika function tidak menyertakan parameternya
+    // get jumlah total data Meja --------------------------------------
+    function getCountTotalData($condition = "") //beri value kosong jika function tidak menyertakan parameternya
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
@@ -91,7 +94,7 @@ class Meja
         }
     }
 
-// get total kapasitas yang ada
+    // get total kapasitas yang ada
     function getCountTotalKapasitas()
     {
         $conn = dbConnect();
@@ -105,7 +108,7 @@ class Meja
         }
     }
 
-// cek no_meja, apakah ada yang sama ?
+    // cek no_meja, apakah ada yang sama ?
     function isNoMejaExist($no_meja)
     {
         $conn = dbConnect();
@@ -121,7 +124,4 @@ class Meja
             return false;
         }
     }
-
 }
-
-?>
