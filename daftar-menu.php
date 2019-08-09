@@ -46,7 +46,8 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                         <!--                                    </div>-->
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="text-md-right dataTables_filter" id="dataTable_filter"><a class="btn btn-primary" role="button" style="margin-right: 18px;" href="daftar-bahan-baku.php">Daftar Bahan Baku</a><a class="btn btn-primary" role="button" style="width: 149px;" href="daftar-menu-tambah.php">Tambah</a>
+                                        <div class="text-md-right dataTables_filter" id="dataTable_filter"><a class="btn btn-primary" role="button" style="margin-right: 18px;" href="daftar-bahan-baku.php">Daftar Bahan Baku</a>
+                                            <a class="btn btn-primary" role="button" style="width: 149px;" href="daftar-menu-tambah.php">Tambah</a>
                                         </div>
                                     </div>
                                 </div>

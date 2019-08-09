@@ -130,6 +130,8 @@ function navigator()
         koki();
     } else if ($jb == "pemilik") {
         pemilik();
+    } else if ($jb == "kasir") {
+        kasir();
     } else if ($jb == "pantri") {
         pantri();
     } else if ($jb == "cs") {
@@ -224,7 +226,7 @@ function kasir()
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
 
                 <li class="nav-item" role="presentation"><a class="nav-link" href="pembayaran.php"><i class="material-icons">account_balance_wallet</i><span>PEMBAYARAN</span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link"><i class="material-icons">input</i><span>LAPORAN</span></a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="laporan.php"><i class="material-icons">input</i><span>LAPORAN</span></a></li>
             </ul>
             <div class="text-center d-none d-md-inline">
                 <button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button>
@@ -298,7 +300,7 @@ function master()
                 <li class="nav-item" role="presentation"><a class="nav-link" href="daftar-menu.php"><i class="material-icons">kitchen</i><span>DAPUR</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="pembayaran.php"><i class="material-icons">account_balance_wallet</i><span>PEMBAYARAN</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="kuisioner.php"><i class="far fa-edit"></i><span>KUISIONER</span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link"><i class="material-icons">input</i><span>LAPORAN</span></a>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="laporan.php"><i class="material-icons">input</i><span>LAPORAN</span></a>
                 </li>
             </ul>
             <div class="text-center d-none d-md-inline">
