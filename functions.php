@@ -106,7 +106,7 @@ function banner()
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Table - Brand</title>
+        <title>Table - RTB</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -196,7 +196,7 @@ function pelayan()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -224,7 +224,7 @@ function koki()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -250,7 +250,7 @@ function pantri()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -258,7 +258,8 @@ function pantri()
                 <li class="nav-item" role="presentation"><a class="nav-link" href="daftar-bahan-baku.php"><i
                                 class="material-icons">kitchen</i><span>DAPUR</span></a></li>
 
-                <li class="nav-item" role="presentation"><a class="nav-link"><i class="material-icons">input</i><span>LAPORAN</span></a>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="laporan.php"><i
+                                class="material-icons">input</i><span>LAPORAN</span></a>
                 </li>
             </ul>
             <div class="text-center d-none d-md-inline">
@@ -278,7 +279,7 @@ function kasir()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -305,7 +306,7 @@ function CS()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -329,7 +330,7 @@ function pemilik()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
@@ -343,7 +344,8 @@ function pemilik()
                                 class="material-icons">account_balance_wallet</i><span>PEMBAYARAN</span></a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="kuisioner.php"><i
                                 class="far fa-edit"></i><span>KUISIONER</span></a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link"><i class="material-icons">input</i><span>LAPORAN</span></a>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="laporan.php"><i
+                                class="material-icons">input</i><span>LAPORAN</span></a>
                 </li>
             </ul>
             <div class="text-center d-none d-md-inline">
@@ -363,7 +365,7 @@ function master()
         <div class="container-fluid d-flex flex-column p-0">
             <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                 <div class="sidebar-brand-icon rotate-n-15"><i class="fas fa-laugh-wink"></i></div>
-                <div class="sidebar-brand-text mx-3"><span>Brand</span></div>
+                <div class="sidebar-brand-text mx-3"><span>RTB</span></div>
             </a>
             <hr class="sidebar-divider my-0">
             <ul class="nav navbar-nav text-light" id="accordionSidebar">
