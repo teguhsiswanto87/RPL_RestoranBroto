@@ -167,6 +167,19 @@ function bahanBakuValidation() {
 
 }
 
+//validasi kelola belanja
+function belanjaValidation() {
+    var tgl_belanja = document.formBelanja.tgl_belanja.value.trim();
+
+    //jika tgl_belanja kosong
+    if (tgl_belanja.length == 0) {
+        alert("Tanggal Belanja tidak boleh kosong");
+        document.formBelanja.tgl_belanja.focus();
+        return false;
+    }
+
+}
+
 //validasi kelola menu
 function detailPesananValidation() {
     var qty = document.formDetailPesanan.qty.value.trim();
@@ -189,6 +202,67 @@ function detailPesananValidation() {
     if (qty.length > 3) {
         alert("Jumlah Pesan tidak boleh lebih dari 3 digit");
         document.formDetailPesanan.qty.focus();
+        return false;
+    }
+
+}
+
+//validasi kelola menu
+function detailBelanjaValidation() {
+    var qty = document.formDetailBelanja.qty.value.trim();
+    var tgl_kadaluarsa = document.formDetailBelanja.tgl_kadaluarsa.value.trim();
+    var satuan = document.formDetailBelanja.satuan.value.trim();
+    var harga = document.formDetailBelanja.harga.value.trim();
+
+    //jika qty kosong
+    if (qty.length == 0) {
+        alert("Jumlah Pesan tidak boleh kosong");
+        document.formDetailBelanja.qty.focus();
+        return false;
+    }
+    //pastikan qty hanya mengandung huruf dan/atau angka
+    var regexAngka = /^[0-9]+$/;
+    if (!regexAngka.test(qty)) {
+        alert("Jumlah Pesan hanya boleh mengandung angka");
+        document.formDetailBelanja.qty.focus();
+        return false;
+    }
+
+    //jika qty lebih dari 2 digit
+    if (qty.length > 3) {
+        alert("Jumlah tidak boleh lebih dari 3 digit");
+        document.formDetailBelanja.qty.focus();
+        return false;
+    }
+
+    // //pastikan nama_bahan_baku hanya mengandung huruf dan/atau angka
+    // var regexAngkaHuruf = /^[A-Za-z0-9\s]+$/;
+    // var regexHuruf = /^[A-Za-z\s]+$/;
+    // if (!regexAngkaHuruf.test(satuan) && !regexHuruf.test(satuan)) {
+    //     alert("Satuan tidak boleh mengandung simbol");
+    //     document.formDetailBelanja.satuan.focus();
+    //     return false;
+    // }
+
+    //jika tgl_kadaluarsa kosong
+    if (tgl_kadaluarsa.length == 0) {
+        alert("Tanggal Kadaluarsa tidak boleh kosong");
+        document.formDetailBelanja.tgl_kadaluarsa.focus();
+        return false;
+    }
+
+    //jika harga kosong
+    if (harga.length == 0) {
+        alert("Tanggal Kadaluarsa tidak boleh kosong");
+        document.formDetailBelanja.harga.focus();
+        return false;
+    }
+
+    //pastikan qty hanya mengandung huruf dan/atau angka
+    var regexAngka = /^[0-9]+$/;
+    if (!regexAngka.test(harga)) {
+        alert("Harga hanya boleh mengandung angka");
+        document.formDetailBelanja.harga.focus();
         return false;
     }
 

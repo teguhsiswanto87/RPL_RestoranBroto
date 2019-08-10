@@ -31,7 +31,11 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                 <?php banner(); ?>
 
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Dapur</h3>
+                    <h3 class="text-dark mb-4">Dapur
+                        <a class="btn btn-primary float-right" role="button" style="width: 8rem;"
+                           href="belanjaan.php">
+                            <i class="fas fa-shopping-bag"></i> Belanja</a>
+                    </h3>
                     <div class="card shadow">
                         <div class="card-header py-3">
                             <p class="text-primary m-0 font-weight-bold">Daftar Menu</p>
@@ -48,9 +52,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                     <!--                                    </div>-->
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="text-md-right dataTables_filter" id="dataTable_filter"><a
-                                                class="btn btn-primary" role="button" style="margin-right: 18px;"
-                                                href="daftar-bahan-baku.php">Daftar Bahan Baku</a>
+                                    <div class="text-md-right dataTables_filter" id="dataTable_filter">
+                                        <a class="btn btn-primary" role="button" style="margin-right: 18px;"
+                                           href="daftar-bahan-baku.php">Daftar Bahan Baku</a>
                                         <a class="btn btn-primary" role="button" style="width: 149px;"
                                            href="daftar-menu-tambah.php">Tambah</a>
                                     </div>

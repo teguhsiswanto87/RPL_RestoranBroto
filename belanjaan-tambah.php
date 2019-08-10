@@ -3,14 +3,16 @@ session_start();
 if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     echo "Sementara : Anda harus login terlebih dahulu";
 } else {
-    include_once("functions.php"); ?>
+    include_once("functions.php");
+    ?>
+
     <!DOCTYPE html>
     <html>
 
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <title>Profile - Brand</title>
+        <title>Tambah Belanja - RTB</title>
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -21,20 +23,18 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     <body id="page-top">
     <div id="wrapper">
         <?php navigator(); ?>
-
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
-                <?php include "banner.php"; ?>
-
+                <?php banner(); ?>
                 <div class="container-fluid">
                     <h3 class="text-dark mb-4">
                         <a class="btn btn-secondary btn-sm" role="button"
                            style="margin-right: 2rem;width: 100px; color: #fafafa; cursor: pointer;"
                            onclick="self.history.back()">
                             <i class="fas fa-chevron-left"></i> Kembali</a>
-                        Meja</h3>
+                        Dapur</h3>
                     <div class="row mb-3">
-                        <div class="col-lg-8" style="width: 920px;">
+                        <div class="col-lg-8">
                             <div class="row mb-3 d-none">
                                 <div class="col">
                                     <div class="card text-white bg-primary shadow">
@@ -69,42 +69,39 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
                                     </div>
                                 </div>
                             </div>
-                            <div class="row" style="width: 920px;">
-                                <div class="col">
-                                    <div class="card shadow mb-3">
+                            <div class="row">
+                                <div class="col" style="width: 920px;">
+                                    <div class="card shadow mb-3" style="width: 920px;">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 font-weight-bold">Tambah Data Meja</p>
+                                            <p class="text-primary m-0 font-weight-bold">Tambah Data Belanjaan</p>
                                         </div>
                                         <div class="card-body">
-                                            <form method="POST" action="action/action_meja.php?act=tambah"
-                                                  onsubmit="return mejaValidation()" name="formMeja">
+                                            <form method="POST" action="action/action_belanja.php?act=tambah"
+                                                  onsubmit="return belanjaValidation()" name="formBelanja">
+                                                <input type="hidden" value="<?php echo "$_SESSION[nip]"; ?>" name="nip">
                                                 <div class="form-row">
+                                                    <!--                                                    <div class="col">-->
+                                                    <!--                                                        <div class="form-group"><label for="username"><strong>ID-->
+                                                    <!--                                                                    Belanjaan</strong></label><input-->
+                                                    <!--                                                                    class="form-control"-->
+                                                    <!--                                                                    type="text"-->
+                                                    <!--                                                                    placeholder="Id Belanjaan"-->
+                                                    <!--                                                                    name="username"></div>-->
+                                                    <!--                                                    </div>-->
                                                     <div class="col">
-                                                        <div class="form-group"><label for="no_meja"><strong>No
-                                                                    Meja</strong></label><input class="form-control"
-                                                                                                type="text"
-                                                                                                placeholder="Nomor Meja"
-                                                                                                name="no_meja"
-                                                                                                style="width: 219px;"
-                                                                                                maxlength="2"
-                                                                                                autofocus></div>
+                                                        <div class="form-group"><label for="tgl_belanja"><strong>Tanggal
+                                                                    Belanjaan</strong></label><input
+                                                                    class="form-control"
+                                                                    id="tgl_belanja"
+                                                                    type="date"
+                                                                    placeholder="Tanggal belanjaan"
+                                                                    name="tgl_belanja"></div>
                                                     </div>
-                                                    <div class="col" style="width: 322px;">
-                                                        <div class="form-group" style="width: 263px;"><label
-                                                                    for="kapasitas"><strong>Kapasitas</strong><br></label><input
-                                                                    class="form-control" type="number"
-                                                                    placeholder="Kapasitas meja" name="kapasitas"
-                                                                    min="0" maxlength="3"
-                                                                    style="width: 273px;"></div>
-                                                    </div>
-                                                    <div class="col" style="width: 256px;">
-                                                        <div class="form-group" style="width: 238px;">
-                                                            <button
-                                                                    class="btn btn-primary btn-sm" type="submit"
-                                                                    style="margin-top: 35px;margin-left: 101px;width: 130px;">
-                                                                Tambah
-                                                            </button>
-                                                        </div>
+                                                    <div class="col">
+                                                        <button class="btn btn-primary" type="submit"
+                                                                style="width: 124px;margin-top: 32px;margin-left: 93px;">
+                                                            Simpan
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -128,6 +125,9 @@ if (empty($_SESSION['nip']) && empty($_SESSION['password'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/validations.js"></script>
+    <script>
+        // $("#tgl_belanja").datepicker();
+    </script>
     </body>
 
     </html>

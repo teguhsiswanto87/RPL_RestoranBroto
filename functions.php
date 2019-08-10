@@ -2,7 +2,7 @@
 define("DEVELOPMENT", TRUE);
 function dbConnect()
 {
-    $db = new mysqli("localhost", "root", "", "db_restoran_tradisional_bubroto");
+    $db = new mysqli("localhost", "root", "siswanto123321", "db_restoran_tradisional_bubroto");
     return $db;
 }
 
@@ -32,6 +32,32 @@ function getCategory()
 function priceFormat($nominal)
 {
     return number_format($nominal, 0, ",", ".");
+}
+
+function tgl_indo($tgl)
+{
+    $tanggal = substr($tgl, 8, 2);
+    $bulanAngka = substr($tgl, 5, 2); // konversi menjadi nama bulan bahasa indonesia
+    $bulan = ambilbulan(substr($tgl, 5, 2)); // konversi menjadi nama bulan bahasa indonesia
+    $tahun = substr($tgl, 0, 4);
+    return $tanggal . ' ' . $bulan . ' ' . $tahun;
+}
+
+// fungsi untuk mengubah angka bulan menjadi nama bulan
+function ambilbulan($bln)
+{
+    if ($bln == "01") return "Januari";
+    elseif ($bln == "02") return "Februari";
+    elseif ($bln == "03") return "Maret";
+    elseif ($bln == "04") return "April";
+    elseif ($bln == "05") return "Mei";
+    elseif ($bln == "06") return "Juni";
+    elseif ($bln == "07") return "Juli";
+    elseif ($bln == "08") return "Agustus";
+    elseif ($bln == "09") return "September";
+    elseif ($bln == "10") return "Oktober";
+    elseif ($bln == "11") return "November";
+    elseif ($bln == "12") return "Desember";
 }
 
 // getListKategori digunakan untuk mengambil seluruh data dari tabel produk
@@ -111,7 +137,7 @@ function banner()
                 <li class="nav-item no-arrow mx-1" role="presentation">
                     <a class="nav-link" aria-expanded="false" href="#" style="padding-left: 0px;"><span
                                 class="mr-2 small"
-                                style="color: #fff;padding-left: 7px;"><?php echo "$_SESSION[jabatan]"; ?></span></a>
+                                style="color: #fff;padding-left: 7px;text-transform: capitalize;"><?php echo "$_SESSION[jabatan]"; ?></span></a>
                 </li>
                 <li class="nav-item dropdown no-arrow mx-1" role="presentation">
                     <div class="shadow dropdown-list dropdown-menu dropdown-menu-right"
